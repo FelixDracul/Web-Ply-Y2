@@ -29,6 +29,12 @@ namespace GTF_Web
 			}
 			else
 				Response.Write("User doesn't exist!");
+			sqlCon.Close();
+		}
+
+		protected void Button2_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("Signup.aspx");
 		}
 	}
 }
