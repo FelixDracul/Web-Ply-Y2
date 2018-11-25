@@ -34,7 +34,7 @@
         </div>
         <p>
             &nbsp;</p>
-        <table align="center" class="auto-style1">
+        <table class="auto-style1">
             <tr>
                 <td class="auto-style4">
                     <asp:Label ID="LabelMail" runat="server" Text="Enter E-mail:"></asp:Label>
@@ -119,7 +119,7 @@
             <tr>
                 <td class="auto-style3"></td>
                 <td class="auto-style6">
-                    <asp:Button ID="Button1" runat="server" Text="Submit" />
+                    <asp:Button ID="Button1" runat="server" Text="Submit" OnClick="Button1_Click" />
 &nbsp;&nbsp;&nbsp;&nbsp;
                     <input id="Reset1" type="reset" value="Reset Fields" /></td>
                 <td class="auto-style5"></td>
@@ -127,4 +127,5 @@
         </table>
     </form>
 </body>
+    <!-- Created by members of Group 18 of the Plymouth Batch 6 (17.1). -->
 </html>

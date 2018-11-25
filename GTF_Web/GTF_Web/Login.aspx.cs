@@ -18,18 +18,19 @@ namespace GTF_Web
 
 		protected void Button1_Click(object sender, EventArgs e)
 		{
-			SqlConnection sqlCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\FelixDracul\Documents\GitHub\Web-Ply-Y2\GTF_Web\GTF_Web\App_Data\UserData.mdf;Integrated Security=True;Connect Timeout=30");
-			sqlCon.Open();
+			SqlConnection logCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\UserData.mdf;Integrated Security=True;Connect Timeout=30");
+			logCon.Open();
 			string query = "SELECT COUNT(*) FROM UserDetails WHERE username='" + TextBoxUser.Text + "' AND password='" + TextBoxPass.Text + "'";
-			SqlCommand cmd = new SqlCommand(query, sqlCon);
+			SqlCommand cmd = new SqlCommand(query, logCon);
 			int count = Convert.ToInt32(cmd.ExecuteScalar());
 			if (count == 1)
 			{
-				Response.Redirect("Dashboard.aspx");
+				Response.Write("Welcome!");
+				Response.Redirect("ViewUsers.aspx");
 			}
 			else
 				Response.Write("User doesn't exist!");
-			sqlCon.Close();
+			logCon.Close();
 		}
 
 		protected void Button2_Click(object sender, EventArgs e)
@@ -37,4 +38,5 @@ namespace GTF_Web
 			Response.Redirect("Signup.aspx");
 		}
 	}
+	//Created by members of Group 18 of the Plymouth Batch 6 (17.1).
 }
