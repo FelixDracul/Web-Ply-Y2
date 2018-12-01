@@ -16,7 +16,7 @@
         <div>
         </div>
         <p>
-            <asp:SqlDataSource ID="SqlDataSourceUserData" runat="server" ConnectionString="<%$ ConnectionStrings:UserViewCon %>" SelectCommand="SELECT * FROM [UserDetails]"></asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSourceUserData" runat="server" ConnectionString="<%$ ConnectionStrings:ViewUserCon %>" SelectCommand="SELECT * FROM [UserDetails]"></asp:SqlDataSource>
         </p>
         <div class="auto-style1">
         <asp:GridView ID="GridView1" runat="server" height="300px" width="100%" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" BackColor="White" BorderColor="#336666" BorderStyle="Solid" BorderWidth="3px" CellPadding="4" DataKeyNames="Id" DataSourceID="SqlDataSourceUserData" GridLines="Horizontal">

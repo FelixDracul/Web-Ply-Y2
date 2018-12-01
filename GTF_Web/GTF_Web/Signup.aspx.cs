@@ -16,7 +16,7 @@ namespace GTF_Web
 		{
 			if (IsPostBack)
 			{
-				SqlConnection chkCon = new SqlConnection(ConfigurationManager.ConnectionStrings["UserViewCon"].ConnectionString);
+				SqlConnection chkCon = new SqlConnection(ConfigurationManager.ConnectionStrings["ViewUserCon"].ConnectionString);
 				chkCon.Open();
 				string userCheck = "SELECT COUNT(*) FROM UserDetails WHERE username='" + TextBoxUser.Text + "'";
 				SqlCommand chkCmd = new SqlCommand(userCheck, chkCon);
@@ -33,7 +33,7 @@ namespace GTF_Web
 		{
 			try
 			{
-				SqlConnection regCon = new SqlConnection(ConfigurationManager.ConnectionStrings["UserViewCon"].ConnectionString);
+				SqlConnection regCon = new SqlConnection(ConfigurationManager.ConnectionStrings["ViewUserCon"].ConnectionString);
 				regCon.Open();
 				string userInsert = "INSERT INTO UserDetails (email, fname, lname, username, password, city) VALUES (@Email, @Fname, @Lname, @UName, @PW, @City)";
 				SqlCommand userCmd = new SqlCommand(userInsert, regCon);
