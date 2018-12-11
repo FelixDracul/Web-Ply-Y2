@@ -37,6 +37,16 @@ namespace GTF_Web
 		{
 			Response.Redirect("Signup.aspx");
 		}
+
+		protected void Button3_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("AdminLogin.aspx");
+		}
+
+		protected void Button4_Click(object sender, EventArgs e)
+		{
+			Response.Redirect("StaffLogin.aspx");
+		}
 	}
 	//Created by members of Group 18 of the Plymouth Batch 6 (17.1).
 }

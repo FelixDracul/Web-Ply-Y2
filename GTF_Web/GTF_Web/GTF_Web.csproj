@@ -67,17 +67,31 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\bootstrap.css" />
-    <Content Include="CSS\bootstrap.min.css" />
+    <Content Include="AdminLogin.aspx" />
+    <Content Include="CSS\RegisterStyles.css" />
     <Content Include="CSS\styles.css" />
+    <Content Include="Images\BG1-Lite.jpg" />
+    <Content Include="Images\BG1.jpg" />
+    <Content Include="Images\BG2-Lite.jpg" />
+    <Content Include="Images\BG2.jpg" />
+    <Content Include="Images\BG3.jpg" />
+    <Content Include="Images\BG4.jpg" />
     <Content Include="Images\HeaderDiv.jpg" />
     <Content Include="Images\Background.JPG" />
     <Content Include="Login.aspx" />
     <Content Include="Signup.aspx" />
+    <Content Include="StaffLogin.aspx" />
     <Content Include="ViewUsers.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminLogin.aspx.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminLogin.aspx.designer.cs">
+      <DependentUpon>AdminLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +107,13 @@
     <Compile Include="Signup.aspx.designer.cs">
       <DependentUpon>Signup.aspx</DependentUpon>
     </Compile>
+    <Compile Include="StaffLogin.aspx.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="StaffLogin.aspx.designer.cs">
+      <DependentUpon>StaffLogin.aspx</DependentUpon>
+    </Compile>
     <Compile Include="ViewUsers.aspx.cs">
       <DependentUpon>ViewUsers.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -102,8 +123,6 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\bootstrap.css.map" />
-    <Content Include="CSS\bootstrap.min.css.map" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
