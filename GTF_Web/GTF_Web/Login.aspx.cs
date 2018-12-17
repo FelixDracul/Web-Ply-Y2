@@ -20,13 +20,22 @@ namespace GTF_Web
 		{
 			SqlConnection logCon = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\UserData.mdf;Integrated Security=True;Connect Timeout=30");
 			logCon.Open();
-			string query = "SELECT COUNT(*) FROM UserDetails WHERE username='" + TextBoxUser.Text + "' AND password='" + TextBoxPass.Text + "'";
+			string query = "SELECT COUNT(*) FROM UserDetails WHERE username='" + TextBoxUser.Text + "'";
 			SqlCommand cmd = new SqlCommand(query, logCon);
 			int count = Convert.ToInt32(cmd.ExecuteScalar());
 			if (count == 1)
 			{
-				Response.Write("Welcome!");
-				Response.Redirect("ViewUsers.aspx");
+				string passQuery = "SELECT password FROM UserDetails WHERE username='" + TextBoxUser.Text + "'";
+				SqlCommand pwCheck = new SqlCommand(passQuery, logCon);
+				string pw = pwCheck.ExecuteScalar().ToString().Replace(" ", "");
+				if (pw == TextBoxPass.Text)
+				{
+					Session["UserName"] = TextBoxUser.Text;
+					Response.Write("Welcome!");
+					Response.Redirect("ViewUsers.aspx");
+				}
+				else
+					Response.Write("Incorrect Password!");
 			}
 			else
 				Response.Write("User doesn't exist!");
