@@ -1,1 +1,1 @@
-# GarbageCollectionSystem-CSharp
+# GarbageManagementSystem-CSharp
